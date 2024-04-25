@@ -1,0 +1,46 @@
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(30,82,113);
+    .heading{
+        h4{
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    p{
+        color: white;
+        font-size: 16px;
+        font-weight: 100;
+    }
+
+    .support_data{
+       mat-icon{
+        color: white;
+        font-size: 19px;
+        padding: 0 3px;
+       }
+       p{
+         color: white;
+         margin: 0;
+         font-weight: 100;
+       }
+      .email{
+        display: flex;
+      }
+      .call{
+        display: flex;
+      }
+    }
+
+    .social_media_logo{
+        display: flex;
+
+    .insta{
+        margin-top: 38px;
+    }
+    }
+   
+}
