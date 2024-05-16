@@ -1,0 +1,101 @@
+<app-header></app-header>
+<div class="home_page_container">
+    <div class="first_part_home_page">
+        <div class="whole_first_container">
+            <div class="about_company">
+                <div class="unveiled_question">
+                   <h3>Byte Bliss Unveiled</h3>
+                </div>
+                <div class="define_byteBliss">
+                    <p>Welcome to Byte Bliss, where we're not just building software, we're crafting digital marvels. Our playground is the realm of code, where creativity knows no bounds. At Byte Bliss, innovation is our currency, and customization is our creed. Join us on a journey where every line of code tells a story, and every project is a testament to our commitment to excellence.</p>
+                </div>
+            </div>
+
+            <div class="get_started">
+               <button>GET STARTED</button>
+            </div>
+    
+            <div class="jump_image">
+                <img src="../../../assets/Sofware enginner.svg">          
+            </div>
+        </div>
+    </div>
+
+    <div class="second_home_page_container">
+        <div class="second_container_heading">
+           <h3>Learn what ByteBliss company can do for you</h3>
+        </div>
+
+        <div class="second_container_cards">
+            <p-carousel [value]="images">
+                <ng-template let-image pTemplate="item" >
+                    <div class="carousel_item" >
+                        <img src="{{ image.src }}" alt="Carousel Image" >
+                        <p>{{ image.content }}</p> 
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>         
+    </div>
+
+    <div class="third_home_page_container">
+        <div class="vision_part">
+           <div class="vision_titile">
+               <h2>VISION</h2>
+               <p>Empowering businesses with transformative digital solutions for a connected world. Innovating with cutting-edge technologies to drive efficiency and growth. Committed to excellence, customer satisfaction, and social responsibility.</p>
+           </div>
+        </div>
+
+        <div class="mission_part">
+            <div class="mission_title">
+                 <h2>MISSION</h2>
+                 <p>To provide personalized software services that propel businesses forward, exceeding client aspirations and industry standards.To provide personalized software services that propel businesses forward, exceeding client aspirations.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="fourth_container">
+            <div class="title">
+               <p>SOFTWARE ENGINEERING</p>
+            </div>
+    
+            <div class="fourth_part_heading">
+               <h3>Leverage our vast technical expertise to develop Tailored Software Products.</h3>
+            </div>
+
+             <div class="image_and_write_part">
+                <div class="write_part">
+                    <div class="third_part_content">
+                        <p>Looking for a Software Engineering?</p>
+                    </div>
+            
+                    <div class="third_part_solution">
+                        <p>Byte Bliss turns your ideas into reality. It is a digital transformation and software engineering company that provides cutting-edge engineering solutions, helping companies and enterprises solve complex issues that emerge during their digital journey.</p>
+                    </div>
+                </div>
+        
+                <div class="image_part_3">
+                        <img src="../../../assets/looking for.png">
+                </div>
+             </div>    
+    </div>
+
+    <div class="fifth_container">
+        <div class="process_title">
+            <h3>Process flow of projects</h3>
+        </div>
+
+        <div class="explain_it">
+            <p>With ByteBliss, you get a dedicated and skilled team backing you up round-the-clock. All our processes are customer-oriented, designed to reduce the cost of business operations, address IT resourcing challenges, and offer you a competitive edge. We start with a deep analysis of your requirements and continue our relationship with post-launch support & updates.</p>
+        </div>
+    </div>
+
+      <div class="process_image_stagewises">
+            <img src="../../../assets/process.png">
+      </div>
+
+</div>
+<app-footer></app-footer>
+
+
