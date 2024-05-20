@@ -1,0 +1,286 @@
+// @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Shadows+Into+Light&display=swap');
+
+.home_page_container{
+    .first_part_home_page{
+        display: flex;
+        background-color: rgb(30,82,113);
+        .whole_first_container{
+            width: 70%;
+            position: relative;
+            margin: 100px auto;
+            .about_company{
+                width: 45%;
+                .unveiled_question{
+                    h3{
+                      font-family: Agrandir (woff2) sans-serif;
+                      font-size: 32px;
+                      font-weight: 500;
+                      color: white;
+                    }
+                }
+                .define_byteBliss{
+                    p{
+                        // font-family: "Source Sans Pro" "Trebuchet MS" Helvetica sans-serif;
+                        // font-family:Verdana, Geneva, Tahoma, sans-serif;
+                        font-family: "Rajdhani", sans-serif;
+                        color: white;
+                        font-size: 16px;
+                        font-weight: 200;
+                        line-height: 25px;
+                    }
+                }
+            }
+
+            .get_started{
+                margin: 40px 20px; 
+               button{
+                 border-color: rgb(44, 119, 162);
+                 background-color: rgb(79, 148, 188);
+                 color: white;
+                 letter-spacing: 3px;
+                 font-weight: 600;
+                 padding: 20px 35px; 
+                 border-radius: 6px;
+                 cursor: pointer;
+                 &:hover {
+                    // background-color: rgb(22, 155, 232);
+                    background: linear-gradient(to right, blue, yellow);
+                    transition: background-position 0.5s ease;
+                 }
+               }
+            }
+
+            .jump_image{
+                width: 500px;
+                height: 1000px;
+                position: absolute;
+                right: -10px;
+                left: 10;
+                top: -250px;
+                img{
+                   width: 100%;
+                   height: 100%;
+                }
+            }
+        }
+    }
+
+    .second_home_page_container{
+        margin: 170px auto;
+        .second_container_heading{
+            h3{
+                font-size: 24px;
+                color: rgb(3,45,96);
+                text-align: center;
+                letter-spacing: 1px;
+                // font-family: "Jersey 10", sans-serif;
+                font-family: "Lugrasimo", cursive;
+                font-weight: 600;
+            }
+        }
+
+        .second_container_cards{
+            width: 1100px;
+            height: 200px;
+            margin: 30px auto;
+            cursor: pointer;
+            img{
+                width: 100%;
+                height:100%;
+                border-radius: 15px;
+            }
+            .carousel_item{
+                p{
+                    margin: 20px 0;
+                    color: rgb(3,45,96);
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-align: center;
+                    // font-family: "Shadows Into Light", cursive;
+                }
+            }
+        }
+    }
+
+    .third_home_page_container{
+        margin: 320px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        // background-color: rgb(33,93,129);
+        // background-color: rgb(232,240,245);
+        background-color: rgb(247,251,254);
+        padding: 50px 100px;
+        h2{
+            // color: white;
+            color: rgb(33,93,129);
+            font-size: 35px;
+            text-align: center;
+        }
+        p{
+            // color: white;
+            color: rgb(33,93,129);
+            font-size: 17px;
+            letter-spacing: 1px;
+            line-height: 30px;
+            text-align: justify;
+        }
+    
+        .vision_part{
+            width: 50%;
+            padding: 0 40px;
+            border-right: 1px solid silver;
+        }
+        .mission_part{
+            width: 50%;
+            padding: 0 40px;
+        }
+    }
+
+    .fourth_container {
+        margin: 80px auto;
+        padding: 0 100px;
+           .title{
+            p{
+                color: rgb(64,169,255);
+                font-size: 16px;
+                font-weight: 700;
+                padding: 0px 35px;
+            }
+           } 
+           .fourth_part_heading{
+            h3{
+                // background-color: thistle;
+                padding: 0px 35px;
+                font-weight: 600;
+                color: rgb(27, 29, 33);
+                font-size: 36px;
+                font-family: Montserrat sans-serif;
+                letter-spacing: 3px;
+                line-height: 40px;
+            }
+           }
+
+           .image_and_write_part{
+            display: flex;
+            margin: 50px 0;
+            padding: 0px 35px;
+             .write_part{
+                width: 50%;
+                
+                .third_part_content{
+                   p{
+                     color:rgb(0, 58, 140);
+                     font-family: Montserrat sans-serif;
+                     font-size: 29px;
+                     letter-spacing: 2px;
+                     line-height: 35px;
+                     font-weight: 800;
+                   
+                   }  
+                }
+                .third_part_solution{
+                    p{
+                        font-family: "Nunito Sans";
+                        font-size: 20px;
+                        color: rgb(109, 109, 109);
+                        line-height: 40px;
+                        letter-spacing: 3px;
+                        // padding-bottom: 120px;
+                        // border-bottom: 1px solid silver;
+                    }
+                }
+             }
+             .image_part_3{
+                width: 50%;
+                height: 450px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+           }
+    }
+
+    .fifth_container{
+        padding: 0px 150px;
+       .process_title{
+         h3{
+             font-family: Montserrat sans-serif;
+             font-size: 36px;
+             color: rgb(0, 58, 140);
+             font-weight: 800;
+             text-align: center;
+         }
+       } 
+       .explain_it{ 
+         p{
+            padding: 20px 0px;
+            font-size: 16px;
+            color: rgb(109, 109, 109);
+            // letter-spacing: 2px;
+            line-height: 30px;
+            text-align: justify;
+            font-weight: 500;
+            font-family: "Nunito Sans" sans-serif;
+         }
+       }  
+    }
+
+    .process_image_stagewises{
+        width: 100%;
+        img{
+            width: 100%;
+          padding: 0 70px;
+          overflow-x: hidden;
+        }
+         
+    }
+
+    .sixth_container{
+        margin-top: 30px;
+         width: 100%;
+         .trust{
+            h2{
+               color: rgb(65, 65, 65);
+               text-align: center;
+               span{
+                 color:rgb(43,106,236);
+                 border-bottom: 1px solid pink;
+               }
+            }
+         }
+
+        .image-scroll-container {
+            overflow: hidden;
+            // white-space: nowrap;
+            // position: relative;
+            width: 100%; 
+            .image-scroll {
+                display: inline-block;
+                white-space: nowrap;
+                animation: scroll 30s linear infinite;
+                background: linear-gradient(to right, rgb(206,245,254), rgb(213,231,253), rgb(219,219,253));
+              }
+              .image-scroll img {
+                display: inline-block;
+                border: 1px solid silver;
+                border-radius: 8px;
+                margin: 60px 30px;
+                width: 200px;
+                height: 200px;
+              }
+          }
+            
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          
+    }
+}

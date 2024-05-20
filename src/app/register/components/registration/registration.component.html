@@ -1,0 +1,65 @@
+<div class="register_page">
+    <div class="register_header">
+       <h3>Lets dive into the digital world!</h3>
+    </div>
+    <div class="reg_main_content">
+        <div class="register_image">
+            <img src="../../../../assets/New reg.jpg"> 
+        </div>
+        <div class="register_form">
+           <h1>Let's Connect</h1>
+           <p>Let us know what you are looking for and we'll be happy to connect with you</p>
+
+           <form class="custom-form">
+            <div class="card flex justify-content-center">
+              <input type="text" placeholder="Full Name*" pInputText class="wide-input" />
+            </div>
+          
+            <div class="card flex justify-content-center">
+              <input type="text" placeholder="Email*" pInputText class="wide-input" />
+            </div>
+          
+            <div class="card flex justify-content-center">
+              <p-dropdown
+                [options]="cities"
+                optionLabel="name"
+                placeholder="Select Country"
+                class="wide-input"
+              ></p-dropdown>
+              <input type="number" placeholder="Phone No" pInputText class="wide-input" style="width: 900px;"/>
+
+            </div>
+
+            <div class="card flex justify-content-center">
+              <p-iconField iconPosition="right">
+                 <p-inputIcon [styleClass]="passwordVisible ? 'pi pi-eye' : 'pi pi-eye-slash'" (click)="togglePasswordVisibility()"/>
+                 <input [type]="passwordVisible ? 'text' : 'password'" pInputText placeholder="Password" class="input_pass" style="width: 570px;"/>
+              </p-iconField>
+            </div>
+            
+            <div class="card flex justify-content-center">
+              <p-iconField iconPosition="right">
+                 <p-inputIcon [styleClass]="confirmPasswordVisible ? 'pi pi-eye' : 'pi pi-eye-slash'" (click)="toggleConfirmPasswordVisibility()"/>
+                 <input [type]="confirmPasswordVisible ? 'text' : 'password'" pInputText placeholder="Confirm Password" class="input_pass" style="width: 570px;"/>
+              </p-iconField>
+            </div>
+            
+            
+           </form>
+
+           <div class="condition_box card flex justify-content-center">
+            <p-checkbox 
+                [binary]="true" 
+                inputId="binary"></p-checkbox>
+             <label class="ok_update" for="binary">I agree to all terms and conditions including career updates</label>
+           </div>
+           
+           <div class="submit_button">
+            <p-button label="Submit" [rounded]="false" />
+           </div>
+        </div>
+    </div>
+
+</div>
+
+
