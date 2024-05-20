@@ -7,4 +7,7 @@ export const routes: Routes = [
     {
         path:"",loadChildren:()=>import ('./user/user-routing.module').then(m=>m.UserRoutingModule)
     },
+    {
+        path:"register", loadChildren:()=>import('./register/register-routing.module').then(m=>m.RegisterRoutingModule)
+    }
 ];
