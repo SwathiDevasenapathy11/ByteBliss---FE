@@ -1,5 +1,4 @@
 .login_container {
-    position: relative;
     width: 100%;
     height: 100vh;
     background: url('../../../../assets/Login\ bgc.jpg') no-repeat center center;
@@ -14,17 +13,15 @@
     }
     .form_input_fields {
         width: 30%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
+        margin: 0 auto;
+        padding: 30px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         background: rgba(255, 255, 255, 0.2);
         
         form {
-            margin-top: 30px;
+            margin:  0 auto;
+            align-items: center;
             .email_field,
             .password {
                 margin-bottom: 30px;
@@ -32,11 +29,19 @@
                 input {
                     width: 100%;
                     font-size: 16px;
-                    // padding: 10px;
-                    // border-radius: 4px;
                 }
                 p-iconField{
                     cursor: pointer;
+                }
+            }
+
+            .err_msg{
+                p{
+                    // color: rgb(255,0,49);
+                    color: rgb(154,40,127);
+                    font-size: small;
+                    // font-weight: 500;
+                    font-size: 15px;
                 }
             }
 
@@ -80,6 +85,9 @@
                         border-top-right-radius: 0;
                         color: whitesmoke;
                     }
+                    &:disabled{
+                        background-color: azure;
+                    }
                 }
             }
 
@@ -112,131 +120,62 @@
 }
 
 
-// .login_container {
-//     position: relative;
-//     width: 100%;
-//     height: 100vh;
-//     overflow: hidden; // Ensure content doesn't overflow
+@media(max-width:900px){
+    .login_container{
+        .form_input_fields{
+            width: 50%;
+        }
+    }
+}
 
-//     .background_image {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background: url('../../../../assets/Log\ 2.jpg') no-repeat center center;
-//         background-size: cover;
-//         filter: blur(2px); /* Adjust the blur amount here */
-//         opacity: 0.8; /* Adjust the opacity if needed */
-//         z-index: 1;
-//     }
+@media(max-width:730px){
+    .login_container{
+        height: auto;
+        .form_input_fields{
+            width: 60%;
+        }
+    }
+}
 
-//     h2 {
-//         padding-top: 60px;
-//         text-align: center;
-//         font-size: 20px;
-//         color: rgba(255, 255, 255, 0.8);
-//         position: relative;
-//         z-index: 2;
-//     }
+@media (min-width: 500px) and (max-width: 630px){
+     .login_container{
+        .form_input_fields{
+            width: 70%;
+        }
+     }
+}
 
-//     .form_input_fields {
-//         width: 30%;
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         padding: 20px;
-//         border-radius: 8px;
-//         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-//         background: rgba(255, 255, 255, 0.2);
-//         backdrop-filter: blur(10px);
-//         z-index: 2;
+@media (min-width: 300px) and (max-width: 499px){
+    .login_container{
+        height :100vh;
+       .form_input_fields{
+           width: 90%;
+       }
+    }
+}
 
-//         form {
-//             margin-top: 30px;
+@media (min-width: 300px) and (max-width: 400px){
+    .login_container{
+        height: 120vh;
+       .form_input_fields{
+           width: 100%;
+           form{
+              .third_party_login{
+                .google_facebook_button{
+                   .google_button , .facebook_button{
+                    button{
+                        padding: 10px 10px;
+                        margin: 5px auto;
+                    }
+                   }
+                   
+                }
+              }
+           }
+       }
+    }
+}
 
-//             .email_field,
-//             .password {
-//                 margin-bottom: 30px;
 
-//                 input {
-//                     width: 100%;
-//                     font-size: 16px;
-//                     padding: 10px;
-//                     border-radius: 4px;
-//                     border: 1px solid #ccc;
-//                     background: rgba(255, 255, 255, 0.7);
-//                     backdrop-filter: blur(5px);
-//                 }
-//             }
 
-//             .links {
-//                 margin-top: 40px;
-//                 display: flex;
-//                 justify-content: space-between;
 
-//                 .forget_password,
-//                 .register_link {
-//                     a {
-//                         color: rgb(154, 40, 127);
-//                         text-decoration: underline;
-//                         cursor: pointer;
-
-//                         &:hover {
-//                             color: rgb(224, 48, 183);
-//                         }
-//                     }
-//                 }
-//             }
-
-//             .submit_button {
-//                 margin: 30px 0;
-//                 display: flex;
-//                 justify-content: center;
-
-//                 button {
-//                     color: rgb(154, 40, 127);
-//                     font-weight: 600;
-//                     font-size: 14px;
-//                     letter-spacing: 1px;
-//                     background-color: rgba(255, 255, 255, 0.7);
-//                     padding: 10px 40px;
-//                     border: 1px solid #ccc;
-//                     border-radius: 8px;
-//                     backdrop-filter: blur(10px); /* Glass effect */
-//                     transition: background-color 0.1s;
-//                     cursor: pointer;
-//                 }
-//             }
-
-//             .third_party_login {
-//                 p {
-//                     text-align: center;
-//                 }
-
-//                 .google_facebook_button {
-//                     display: flex;
-//                     justify-content: space-between;
-
-//                     .google_button,
-//                     .facebook_button {
-//                         button {
-//                             cursor: pointer;
-//                             color: rgb(154, 40, 127);
-//                             font-weight: 600;
-//                             font-size: 14px;
-//                             letter-spacing: 1px;
-//                             background-color: rgba(255, 255, 255, 0.7);
-//                             padding: 10px 40px;
-//                             border: 1px solid #ccc;
-//                             border-radius: 8px;
-//                             backdrop-filter: blur(10px); /* Glass effect */
-//                             transition: background-color 0.1s;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }

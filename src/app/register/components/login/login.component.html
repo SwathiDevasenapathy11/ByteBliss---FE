@@ -1,19 +1,27 @@
-<div class="login_container">
+  <div class="login_container">
     <h2>LOGIN FORM</h2>
     <div class="form_input_fields">
-        <form>
+        <form #loginForm = "ngForm" (ngSubmit)="authenticateForm(loginForm)">
             <div class="email_field">
                 <p-iconField iconPosition="right">
                     <p-inputIcon styleClass="pi pi-envelope" />
-                    <input type="text" pInputText placeholder="Email" />
+                    <input type="text" pInputText placeholder="Email" name="email" ngModel required email #email="ngModel"/>
                 </p-iconField>
+                <div class="err_msg" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <p *ngIf="email.errors?.['required']">Email is required*</p>
+                    <p *ngIf="email.errors?.['email']">Invalid email</p>
+                </div>
             </div>
             <div class="password">
                     <p-iconField iconPosition="right">
                         <p-inputIcon [styleClass]="passwordFieldType === 'password' ?  'pi pi-eye-slash' : 'pi pi-eye'" 
                                      (click)="togglePasswordVisibility()" />
-                        <input [type]="passwordFieldType" pInputText placeholder="Password" />
+                        <input [type]="passwordFieldType" pInputText placeholder="Password" name="password" ngModel required minlength="8" #password="ngModel"/>
                     </p-iconField>
+                    <div class="err_msg" *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <p *ngIf="password.errors?.['required']">Password is required*</p>
+                        <p *ngIf="password.errors?.['minlength']">Password must be at least 8 characters long</p>
+                    </div>
             </div>
 
             <div class="links">
@@ -26,7 +34,7 @@
             </div>
 
             <div class="submit_button">
-                <button>SIGN IN</button>
+                <button >SIGN IN</button>
             </div>
 
             <div class="third_party_login">
@@ -46,46 +54,3 @@
     </div>
 </div>
 
-
-
- <!-- <div class="login_container">
-    <div class="background_image"></div>
-    <h2>Login Form</h2>
-    <div class="form_input_fields">
-        <form>
-            <div class="email_field">
-                <input type="text" pInputText placeholder="Email" />
-            </div>
-            <div class="password">
-                <input type="text" pInputText placeholder="Password" />
-            </div>
-
-            <div class="links">
-                <div class="forget_password">
-                    <a>Forget Password</a>
-                </div>
-                <div class="register_link">
-                    <a>Need Registration</a>
-                </div>
-            </div>
-
-            <div class="submit_button">
-                <button>SIGN IN</button>
-            </div>
-
-            <div class="third_party_login">
-                <p>-- OR SIGN IN WITH --</p>
-
-                <div class="google_facebook_button">
-                    <div class="google_button">
-                        <button>Google</button>
-                    </div>
-
-                    <div class="facebook_button">
-                        <button>Facebook</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div> -->
