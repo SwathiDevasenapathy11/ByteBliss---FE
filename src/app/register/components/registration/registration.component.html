@@ -3,60 +3,73 @@
        <h3>Lets dive into the digital world!</h3>
     </div>
     <div class="reg_main_content">
-        <div class="register_image">
-            <img src="../../../../assets/New reg.jpg"> 
-        </div>
         <div class="register_form">
-           <h1>Let's Connect</h1>
            <p>Let us know what you are looking for and we'll be happy to connect with you</p>
 
-           <form class="custom-form">
+        <form class="custom-form" [formGroup]="registerForm">
             <div class="card flex justify-content-center">
-              <input type="text" placeholder="Full Name*" pInputText class="wide-input" />
+              <input type="text" placeholder="Full Name*" pInputText class="wide-input" formControlName="name" />
+            </div>
+            <div class="error_msg" *ngIf="registerForm.get('name')!.invalid && (registerForm.get('name')!.touched || registerForm.get('name')!.dirty)">
+              <small>Full Name is required</small>
             </div>
           
             <div class="card flex justify-content-center">
-              <input type="text" placeholder="Email*" pInputText class="wide-input" />
+              <input type="text" placeholder="Email*" pInputText class="wide-input" formControlName="email"/>
+            </div>
+            <div class="error_msg" *ngIf="registerForm.get('email')!.invalid && (registerForm.get('email')!.touched || registerForm.get('email')!.dirty)">
+              <small *ngIf="registerForm.get('email')!.errors?.['required']">Email is required</small>
+              <small *ngIf="registerForm.get('email')!.errors?.['email']">Invalid Email Address</small>
             </div>
           
             <div class="card flex justify-content-center">
-              <p-dropdown
-                [options]="cities"
-                optionLabel="name"
-                placeholder="Select Country"
-                class="wide-input"
-              ></p-dropdown>
-              <input type="number" placeholder="Phone No" pInputText class="wide-input" style="width: 900px;"/>
-
+              <input type="number" placeholder="Phone No" pInputText class="wide-input" style="width: 900px;" formControlName="phoneNumber"/>
+            </div>
+            <div class="error_msg" *ngIf="registerForm.get('phoneNumber')!.invalid && (registerForm.get('phoneNumber')!.touched || registerForm.get('phoneNumber')!.dirty)">
+              <small *ngIf="registerForm.get('phoneNumber')!.errors?.['required']">Phone Number is required</small>
+              <small *ngIf="registerForm.get('phoneNumber')!.errors?.['minlength']">Must be 10 digits</small>
             </div>
 
             <div class="card flex justify-content-center">
               <p-iconField iconPosition="right">
                  <p-inputIcon [styleClass]="passwordVisible ? 'pi pi-eye' : 'pi pi-eye-slash'" (click)="togglePasswordVisibility()"/>
-                 <input [type]="passwordVisible ? 'text' : 'password'" pInputText placeholder="Password" class="input_pass" style="width: 570px;"/>
+                 <input [type]="passwordVisible ? 'text' : 'password'" pInputText placeholder="Password*" class="input_pass" style="width: 570px;" formControlName="password"/>
               </p-iconField>
+            </div>
+            <div class="error_msg" *ngIf="registerForm.get('password')!.invalid && (registerForm.get('password')!.touched || registerForm.get('password')!.dirty)">
+              <small *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</small>
+              <small *ngIf="registerForm.get('password')!.errors?.['minlength']">Password must be 8 inch long</small>
             </div>
             
             <div class="card flex justify-content-center">
               <p-iconField iconPosition="right">
                  <p-inputIcon [styleClass]="confirmPasswordVisible ? 'pi pi-eye' : 'pi pi-eye-slash'" (click)="toggleConfirmPasswordVisibility()"/>
-                 <input [type]="confirmPasswordVisible ? 'text' : 'password'" pInputText placeholder="Confirm Password" class="input_pass" style="width: 570px;"/>
+                 <input [type]="confirmPasswordVisible ? 'text' : 'password'" pInputText placeholder="Confirm Password*" class="input_pass" style="width: 570px;" formControlName="confirmPassword"/>
               </p-iconField>
             </div>
-            
-            
-           </form>
+            <div class="error_msg" *ngIf="registerForm.get('confirmPassword')!.invalid && (registerForm.get('confirmPassword')!.touched || registerForm.get('confirmPassword')!.dirty)">
+              <small *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">Password is required</small>
+              <small *ngIf="registerForm.get('confirmPassword')!.errors?.['minlength']">Password must be 8 inch long</small>
+            </div>
 
-           <div class="condition_box card flex justify-content-center">
-            <p-checkbox 
-                [binary]="true" 
-                inputId="binary"></p-checkbox>
-             <label class="ok_update" for="binary">I agree to all terms and conditions including career updates</label>
-           </div>
+             <div class="condition_box card flex justify-content-center">
+              <p-checkbox 
+                  [binary]="true" 
+                  inputId="binary"
+                  formControlName="terms"></p-checkbox>
+              <label class="ok_update" for="binary">I agree to all terms and conditions including career updates</label>
+            </div>
+
+            <div class="error_msg" *ngIf="registerForm.get('terms')!.invalid && (registerForm.get('terms')?.touched || registerForm.get('terms')?.dirty)">
+               <small>You have to accept for the conditions</small>
+            </div>
+            
+        </form>
            
            <div class="submit_button">
-            <p-button label="Submit" [rounded]="false" />
+             <p-button label="Submit" [rounded]="false" [disabled]="registerForm.invalid"/>
            </div>
+
         </div>
     </div>
 
